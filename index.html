@@ -10,10 +10,17 @@
             text-align: center;
             font-family: Arial, sans-serif;
         }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
         .container {
             position: relative;
-            display: inline-block;
-            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
         }
         .main-image {
             width: 200px;
@@ -25,31 +32,27 @@
             transform: scale(1.1);
         }
         .videos {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             display: flex;
-            gap: 10px;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
         .video-box {
-            width: 150px;
+            width: 250px;
             border-radius: 10px;
             transition: transform 0.3s;
         }
         .video-box:hover {
             transform: scale(1.1);
         }
-        .hidden {
-            display: none;
-        }
     </style>
 </head>
 <body>
-    <div class="container" onmouseover="showVideos()" onmouseout="hideVideos()">
+    <div class="title">TFoor.com</div>
+    <div class="container">
         <img src="channels4_profile.jpg" alt="Tfoor Logo" class="main-image">
-        <div class="videos hidden" id="videoContainer">
+        <div class="videos" id="videoContainer">
             <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
                 <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
             </a>
@@ -61,15 +64,6 @@
             </a>
         </div>
     </div>
-
-    <script>
-        function showVideos() {
-            document.getElementById("videoContainer").classList.remove("hidden");
-        }
-
-        function hideVideos() {
-            document.getElementById("videoContainer").classList.add("hidden");
-        }
-    </script>
 </body>
 </html>
+
