@@ -19,6 +19,10 @@
             width: 200px;
             border-radius: 50%;
             cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .main-image:hover {
+            transform: scale(1.1);
         }
         .videos {
             display: none;
@@ -31,6 +35,7 @@
         }
         .video-box {
             width: 150px;
+            border-radius: 10px;
             transition: transform 0.3s;
         }
         .video-box:hover {
@@ -43,16 +48,16 @@
 </head>
 <body>
     <div class="container" onmouseover="showVideos()" onmouseout="hideVideos()">
-        <img src="image.png" alt="Tfoor Logo" class="main-image">
+        <img src="channels4_profile.jpg" alt="Tfoor Logo" class="main-image">
         <div class="videos hidden" id="videoContainer">
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID1" target="_blank">
-                <img src="https://img.youtube.com/vi/VIDEO_ID1/0.jpg" alt="Video 1" class="video-box">
+            <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
+                <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
             </a>
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID2" target="_blank">
-                <img src="https://img.youtube.com/vi/VIDEO_ID2/0.jpg" alt="Video 2" class="video-box">
+            <a href="https://youtu.be/nXeftOw8mF8" target="_blank">
+                <img src="https://img.youtube.com/vi/nXeftOw8mF8/0.jpg" alt="Video 2" class="video-box">
             </a>
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID3" target="_blank">
-                <img src="https://img.youtube.com/vi/VIDEO_ID3/0.jpg" alt="Video 3" class="video-box">
+            <a href="https://youtu.be/eDPzzM-avmg" target="_blank">
+                <img src="https://img.youtube.com/vi/eDPzzM-avmg/0.jpg" alt="Video 3" class="video-box">
             </a>
         </div>
     </div>
