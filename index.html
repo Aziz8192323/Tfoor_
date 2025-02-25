@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيرفر Battle of Tribes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: white;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .join-btn, .social-btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .join-btn:hover, .social-btn:hover {
+            background-color: #e68900;
+        }
+    </style>
+</head>
+<body>
+    <h1>مرحبا بك في سيرفر TFoor</h1>
+    <p>انضم إلى السيرفر الآن واستمتع بالمغامرة!</p>
+    <button class="join-btn" onclick="copyIP()">انسخ عنوان السيرفر</button>
+    
+    <h2>تابعنا على مواقع التواصل الاجتماعي</h2>
+    <a class="social-btn" href="https://www.instagram.com/awar.teter/" target="_blank">Instagram</a>
+    <a class="social-btn" href="https://www.tiktok.com/@t.foor?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+    <a class="social-btn" href="https://www.youtube.com/@tfoor" target="_blank">YouTube</a>
+    
+    <script>
+        function copyIP() {
+            const ip = "Battle_of_Tribes.aternos.me:51947"; // عنوان السيرفر
+            navigator.clipboard.writeText(ip).then(() => {
+                alert("تم نسخ عنوان السيرفر: " + ip);
+            });
+        }
+    </script>
+</body>
+</html>
