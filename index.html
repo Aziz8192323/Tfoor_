@@ -9,11 +9,14 @@
             background-color: #e6f7e6;
             text-align: center;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .title {
             font-size: 32px;
             font-weight: bold;
             margin-top: 20px;
+            color: #333;
         }
         .container {
             position: relative;
@@ -26,6 +29,7 @@
             width: 150px;
             border-radius: 50%;
             margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .videos {
             display: flex;
@@ -37,17 +41,35 @@
         .video-box {
             width: 250px;
             border-radius: 10px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .video-box:hover {
             transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .subscribe-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .subscribe-button:hover {
+            background-color: #cc0000;
         }
     </style>
 </head>
 <body>
     <div class="title">TFoor.com</div>
     <div class="container">
-        <img src="channels4_profile.jpg" alt="Tfoor Logo" class="logo">
+        <!-- صورة اللوجو من قناة YouTube -->
+        <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s48-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
+        <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
         <div class="videos" id="videoContainer">
             <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
                 <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
@@ -62,4 +84,3 @@
     </div>
 </body>
 </html>
-
