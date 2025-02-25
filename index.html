@@ -3,54 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سيرفر Battle of Tribes</title>
+    <title>Tfoor YouTube Showcase</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            background-color: #e6f7e6;
             text-align: center;
-            background-color: #121212;
-            color: white;
-            padding: 50px;
+            font-family: Arial, sans-serif;
         }
-        h1 {
-            font-size: 3em;
-        }
-        p {
-            font-size: 1.2em;
-        }
-        .join-btn, .social-btn {
-            background-color: #ff9800;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            border-radius: 5px;
-            margin: 10px;
+        .container {
+            position: relative;
             display: inline-block;
-            text-decoration: none;
+            margin-top: 50px;
         }
-        .join-btn:hover, .social-btn:hover {
-            background-color: #e68900;
+        .main-image {
+            width: 200px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .videos {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 10px;
+        }
+        .video-box {
+            width: 150px;
+            transition: transform 0.3s;
+        }
+        .video-box:hover {
+            transform: scale(1.1);
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>مرحبا بك في سيرفر TFoor</h1>
-    <p>انضم إلى السيرفر الآن واستمتع بالمغامرة!</p>
-    <button class="join-btn" onclick="copyIP()">انسخ عنوان السيرفر</button>
-    
-    <h2>تابعنا على مواقع التواصل الاجتماعي</h2>
-    <a class="social-btn" href="https://www.instagram.com/awar.teter/" target="_blank">Instagram</a>
-    <a class="social-btn" href="https://www.tiktok.com/@t.foor?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
-    <a class="social-btn" href="https://www.youtube.com/@tfoor" target="_blank">YouTube</a>
-    
+    <div class="container" onmouseover="showVideos()" onmouseout="hideVideos()">
+        <img src="image.png" alt="Tfoor Logo" class="main-image">
+        <div class="videos hidden" id="videoContainer">
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID1" target="_blank">
+                <img src="https://img.youtube.com/vi/VIDEO_ID1/0.jpg" alt="Video 1" class="video-box">
+            </a>
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID2" target="_blank">
+                <img src="https://img.youtube.com/vi/VIDEO_ID2/0.jpg" alt="Video 2" class="video-box">
+            </a>
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID3" target="_blank">
+                <img src="https://img.youtube.com/vi/VIDEO_ID3/0.jpg" alt="Video 3" class="video-box">
+            </a>
+        </div>
+    </div>
+
     <script>
-        function copyIP() {
-            const ip = "Battle_of_Tribes.aternos.me:51947"; // عنوان السيرفر
-            navigator.clipboard.writeText(ip).then(() => {
-                alert("تم نسخ عنوان السيرفر: " + ip);
-            });
+        function showVideos() {
+            document.getElementById("videoContainer").classList.remove("hidden");
+        }
+
+        function hideVideos() {
+            document.getElementById("videoContainer").classList.add("hidden");
         }
     </script>
 </body>
