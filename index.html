@@ -3,52 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TFoor Welcome</title>
+    <title>Tfoor YouTube Showcase</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
-
         body {
             background-color: #ffdddd;
             text-align: center;
-            font-family: 'Tajawal', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #bb0000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 200vh;
+            color: #333;
             overflow-x: hidden;
         }
-
-        .welcome-text {
-            font-size: 60px;
+        .welcome-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-size: 36px;
             font-weight: bold;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards, smoothBounce 3s infinite ease-in-out;
-            text-shadow: 3px 3px 5px white;
+            color: #bb0000;
+            animation: fadeIn 2s ease-in-out;
         }
-
         @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-
-        @keyframes smoothBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        .scroll-arrow {
+            font-size: 40px;
+            cursor: pointer;
+            margin-top: 20px;
+            animation: bounce 1.5s infinite;
         }
-
-        .channel-section {
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .container, .shop-container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            border: 3px dashed #bb0000;
+            border-radius: 15px;
+            background-color: rgba(255, 200, 200, 0.5);
+            transition: opacity 1s ease-in-out;
+        }
+        .hidden {
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-            font-size: 30px;
-            font-weight: bold;
-            color: #333;
-            margin-top: 100vh;
         }
-
         .visible {
             opacity: 1;
             transform: translateY(0);
@@ -56,18 +59,52 @@
     </style>
 </head>
 <body>
-    <div class="welcome-text">مرحبًا بك في موقع تفور!</div>
-    <div class="channel-section" id="channel">🔔 اشترك في قناتنا لمزيد من المحتوى المميز! 🔔</div>
+    <div class="welcome-container">
+        Welcome TO Browse Of Tfoor
+        <div class="scroll-arrow" onclick="scrollToSection('youtube-section')">⬇</div>
+    </div>
+    
+    <div id="youtube-section" class="container hidden">
+        <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
+        <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
+        <div class="videos">
+            <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
+                <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
+            </a>
+            <a href="https://youtu.be/nXeftOw8mF8" target="_blank">
+                <img src="https://img.youtube.com/vi/nXeftOw8mF8/0.jpg" alt="Video 2" class="video-box">
+            </a>
+            <a href="https://youtu.be/eDPzzM-avmg" target="_blank">
+                <img src="https://img.youtube.com/vi/eDPzzM-avmg/0.jpg" alt="Video 3" class="video-box">
+            </a>
+        </div>
+        <div class="scroll-arrow" onclick="scrollToSection('shop-section')">⬇</div>
+    </div>
+    
+    <div id="shop-section" class="shop-container hidden">
+        <div class="shop-title">SHOP.COM</div>
+        <div class="shop-items">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png" class="shop-item">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895744991383/VIP.png" class="shop-item">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png" class="shop-item">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595897103814716/MVP.png" class="shop-item">
+        </div>
+        <p style="color: #bb0000; font-size: 16px; font-weight: bold; margin-top: 10px;">ملاحظة: إذا بدك تشتري رتب في ماين كرافت لازم تدخل سيرفر ديسكورد</p>
+    </div>
     
     <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
         window.addEventListener('scroll', function() {
-            var channelSection = document.getElementById('channel');
-            var position = channelSection.getBoundingClientRect().top;
-            var screenHeight = window.innerHeight;
-            
-            if (position < screenHeight - 100) {
-                channelSection.classList.add('visible');
-            }
+            document.querySelectorAll('.hidden').forEach(section => {
+                let position = section.getBoundingClientRect().top;
+                let screenPosition = window.innerHeight / 1.3;
+                if (position < screenPosition) {
+                    section.classList.add('visible');
+                    section.classList.remove('hidden');
+                }
+            });
         });
     </script>
 </body>
