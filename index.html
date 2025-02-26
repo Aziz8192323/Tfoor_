@@ -3,108 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tfoor YouTube Showcase</title>
+    <title>Tfoor Social Links</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            background-color: #ffdddd; /* أحمر فاتح جدًا */
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .title {
-            font-size: 32px;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #bb0000;
-        }
-        .container {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 60%;
-            margin: 20px auto;
-            padding: 20px;
-            border: 3px dashed #bb0000;
-            border-radius: 15px;
-            background-color: rgba(255, 200, 200, 0.5);
-        }
-        .logo {
-            width: 120px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            border: 3px dashed #bb0000;
-            padding: 5px;
-            transition: transform 0.3s ease;
-        }
-        .logo:hover {
-            transform: scale(1.1);
-        }
-        .videos {
+        .social-icons {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            gap: 15px;
+            margin-top: 20px;
         }
-        .video-box {
-            width: 200px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 3px dashed #bb0000;
-            padding: 5px;
-        }
-        .video-box:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .subscribe-button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
+        .social-icons a {
+            text-decoration: none;
+            font-size: 30px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
             color: white;
-            background-color: #bb0000;
-            border: 3px dashed #bb0000; /* إطار متقطع أحمر */
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .subscribe-button:hover {
-            background-color: #880000;
-            transform: scale(1.05);
+        .social-icons a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
-        .container:hover .videos,
-        .logo:hover ~ .videos {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .discord { background-color: #5865F2; } /* لون ديسكورد */
+        .instagram { background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); } /* لون انستجرام */
+        .youtube { background-color: #FF0000; } /* لون يوتيوب */
+        .tiktok { background-color: #000; } /* لون تيك توك */
     </style>
 </head>
 <body>
-    <div class="title">TFoor.com</div>
-    <div class="container">
-        <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
-        <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
-        <div class="videos" id="videoContainer">
-            <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
-                <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
-            </a>
-            <a href="https://youtu.be/nXeftOw8mF8" target="_blank">
-                <img src="https://img.youtube.com/vi/nXeftOw8mF8/0.jpg" alt="Video 2" class="video-box">
-            </a>
-            <a href="https://youtu.be/eDPzzM-avmg" target="_blank">
-                <img src="https://img.youtube.com/vi/eDPzzM-avmg/0.jpg" alt="Video 3" class="video-box">
-            </a>
-        </div>
+    <div class="social-icons">
+        <a href="https://discord.gg/vCqY2M7r9A" target="_blank" class="discord">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://www.instagram.com/awar.teter/" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@tfoor" target="_blank" class="youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/@t.foor?is_from_webapp=1&sender_device=pc" target="_blank" class="tiktok">
+            <i class="fab fa-tiktok"></i>
+        </a>
     </div>
 </body>
 </html>
