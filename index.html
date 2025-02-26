@@ -22,20 +22,21 @@
         }
 
         .welcome-text {
-            font-size: 40px;
+            font-size: 80px;
             font-weight: bold;
             opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards, smoothBounce 3s infinite ease-in-out;
+            text-shadow: 4px 4px 10px white;
+            animation: fadeIn 3s ease-in-out forwards, smoothBounce 5s infinite ease-in-out;
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
+            0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes smoothBounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -43,4 +44,5 @@
     <div class="welcome-text">مرحبًا بك في موقع تفور!</div>
 </body>
 </html>
+
 
