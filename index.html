@@ -15,34 +15,48 @@
             padding: 0;
             color: #bb0000;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            height: 200vh;
+            overflow-x: hidden;
         }
 
         .welcome-text {
-            font-size: 80px;
+            font-size: 60px;
             font-weight: bold;
             opacity: 0;
-            text-shadow: 4px 4px 10px white;
-            animation: fadeIn 3s ease-in-out forwards, smoothBounce 5s infinite ease-in-out;
+            animation: fadeIn 2s ease-in-out forwards, smoothBounce 3s infinite ease-in-out;
+            text-shadow: 3px 3px 5px white;
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(30px); }
+            0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes smoothBounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .channel-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 100vh;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
-
 </head>
 <body>
-    <div class="welcome-text">مرحبًا بك في موقع TFOOR!</div>
+    <div class="welcome-text">مرحبًا بك في موقع تفور!</div>
     <div class="channel-section" id="channel">🔔 اشترك في قناتنا لمزيد من المحتوى المميز! 🔔</div>
     
     <script>
@@ -58,8 +72,3 @@
     </script>
 </body>
 </html>
-
-</body>
-</html>
-
-
