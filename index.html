@@ -20,7 +20,6 @@
             color: #bb0000;
         }
         .container {
-            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -42,6 +41,26 @@
             transition: transform 0.3s ease;
         }
         .logo:hover {
+            transform: scale(1.1);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .social-icons a {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .social-icons img {
+            width: 80px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px dashed #bb0000;
+            padding: 5px;
+        }
+        .social-icons a:hover {
             transform: scale(1.1);
         }
         .videos {
@@ -79,34 +98,16 @@
             background-color: #880000;
             transform: scale(1.05);
         }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .social-links a {
-            display: inline-block;
-        }
-        .social-links img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s;
-        }
-        .social-links img:hover {
-            transform: scale(1.2);
-        }
     </style>
 </head>
 <body>
     <div class="title">TFoor.com</div>
     <div class="container">
         <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
-        <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
         
-        <div class="social-links">
+        <div class="social-icons">
             <a href="https://www.youtube.com/@tfoor" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_social_red_square_%282017%29.svg" alt="YouTube">
             </a>
             <a href="https://www.instagram.com/tfoor" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
@@ -115,11 +116,12 @@
                 <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok">
             </a>
             <a href="https://discord.com/invite/tfoor" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Discord_Logo_full.svg" alt="Discord">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Discord_logo.svg" alt="Discord">
             </a>
         </div>
-        
-        <div class="videos" id="videoContainer">
+
+        <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
+        <div class="videos">
             <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
                 <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
             </a>
@@ -133,3 +135,4 @@
     </div>
 </body>
 </html>
+
