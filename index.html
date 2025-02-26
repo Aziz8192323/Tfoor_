@@ -39,9 +39,26 @@
             50% { transform: translateY(-10px); }
         }
     </style>
+
 </head>
 <body>
     <div class="welcome-text">مرحبًا بك في موقع TFOOR!</div>
+    <div class="channel-section" id="channel">🔔 اشترك في قناتنا لمزيد من المحتوى المميز! 🔔</div>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            var channelSection = document.getElementById('channel');
+            var position = channelSection.getBoundingClientRect().top;
+            var screenHeight = window.innerHeight;
+            
+            if (position < screenHeight - 100) {
+                channelSection.classList.add('visible');
+            }
+        });
+    </script>
+</body>
+</html>
+
 </body>
 </html>
 
