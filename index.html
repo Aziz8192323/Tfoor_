@@ -12,59 +12,115 @@
             margin: 0;
             padding: 0;
             color: #333;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
-        .welcome-container {
+
+        .section {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             flex-direction: column;
-            font-size: 36px;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .title {
+            font-size: 40px;
             font-weight: bold;
             color: #bb0000;
             animation: fadeIn 2s ease-in-out;
         }
+
         @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .scroll-arrow {
-            font-size: 40px;
-            cursor: pointer;
+
+        .arrow {
             margin-top: 20px;
+            font-size: 30px;
+            cursor: pointer;
             animation: bounce 1.5s infinite;
         }
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
+
         .container, .shop-container {
             width: 60%;
-            margin: 50px auto;
+            margin: 20px auto;
             padding: 20px;
             border: 3px dashed #bb0000;
             border-radius: 15px;
             background-color: rgba(255, 200, 200, 0.5);
-            transition: opacity 1s ease-in-out;
         }
-        .hidden {
-            opacity: 0;
-            transform: translateY(50px);
+
+        .logo {
+            width: 150px;
+            border-radius: 50%;
+            border: 3px dashed #bb0000;
+            padding: 5px;
+            transition: transform 0.3s ease;
         }
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .videos {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .video-box {
+            width: 250px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px dashed #bb0000;
+            padding: 5px;
+        }
+
+        .video-box:hover {
+            transform: scale(1.1);
+        }
+
+        .subscribe-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #bb0000;
+            border: 3px dashed #bb0000;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .subscribe-button:hover {
+            background-color: #880000;
+            transform: scale(1.05);
+        }
+
+        .shop-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #bb0000;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="welcome-container">
-        Welcome TO Browse Of Tfoor
-        <div class="scroll-arrow" onclick="scrollToSection('youtube-section')">⬇</div>
+    <div class="section">
+        <div class="title">Welcome TO Browse Of Tfoor</div>
+        <div class="arrow" onclick="document.getElementById('youtube-section').scrollIntoView({behavior: 'smooth'})">⬇</div>
     </div>
-    
-    <div id="youtube-section" class="container hidden">
+
+    <div id="youtube-section" class="container">
         <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
         <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
         <div class="videos">
@@ -78,34 +134,14 @@
                 <img src="https://img.youtube.com/vi/eDPzzM-avmg/0.jpg" alt="Video 3" class="video-box">
             </a>
         </div>
-        <div class="scroll-arrow" onclick="scrollToSection('shop-section')">⬇</div>
     </div>
-    
-    <div id="shop-section" class="shop-container hidden">
+
+    <div class="arrow" onclick="document.getElementById('shop-section').scrollIntoView({behavior: 'smooth'})">⬇ SHOP ⬇</div>
+
+    <div id="shop-section" class="shop-container">
         <div class="shop-title">SHOP.COM</div>
-        <div class="shop-items">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895744991383/VIP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595897103814716/MVP.png" class="shop-item">
-        </div>
-        <p style="color: #bb0000; font-size: 16px; font-weight: bold; margin-top: 10px;">ملاحظة: إذا بدك تشتري رتب في ماين كرافت لازم تدخل سيرفر ديسكورد</p>
+        <p>ملاحظة: إذا بدك تشتري رتب في ماين كرافت لازم تدخل سيرفر ديسكورد</p>
     </div>
-    
-    <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-        window.addEventListener('scroll', function() {
-            document.querySelectorAll('.hidden').forEach(section => {
-                let position = section.getBoundingClientRect().top;
-                let screenPosition = window.innerHeight / 1.3;
-                if (position < screenPosition) {
-                    section.classList.add('visible');
-                    section.classList.remove('hidden');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
+
