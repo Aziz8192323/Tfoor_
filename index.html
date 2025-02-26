@@ -12,117 +12,60 @@
             margin: 0;
             padding: 0;
             color: #333;
-            scroll-behavior: smooth;
         }
 
-        .section {
+        .welcome {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: #ffdddd;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-        }
-
-        .title {
-            font-size: 40px;
+            font-size: 36px;
             font-weight: bold;
             color: #bb0000;
-            animation: fadeIn 2s ease-in-out;
+            transition: opacity 0.8s, transform 0.8s;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+            pointer-events: none;
         }
 
-        .arrow {
-            margin-top: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            animation: bounce 1.5s infinite;
+        .content {
+            padding-top: 100vh;
+            background-color: #fff;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .container, .videos, .social-icons, .shop-container {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        .container, .shop-container {
-            width: 60%;
-            margin: 20px auto;
-            padding: 20px;
-            border: 3px dashed #bb0000;
-            border-radius: 15px;
-            background-color: rgba(255, 200, 200, 0.5);
-        }
-
-        .logo {
-            width: 150px;
-            border-radius: 50%;
-            border: 3px dashed #bb0000;
-            padding: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.1);
-        }
-
-        .videos {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-
-        .video-box {
-            width: 250px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 3px dashed #bb0000;
-            padding: 5px;
-        }
-
-        .video-box:hover {
-            transform: scale(1.1);
-        }
-
-        .subscribe-button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: #bb0000;
-            border: 3px dashed #bb0000;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .subscribe-button:hover {
-            background-color: #880000;
-            transform: scale(1.05);
-        }
-
-        .shop-title {
-            font-size: 28px;
-            font-weight: bold;
-            color: #bb0000;
-            margin-bottom: 15px;
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
     </style>
 </head>
 <body>
-    <div class="section">
-        <div class="title">Welcome TO Browse Of Tfoor</div>
-        <div class="arrow" onclick="document.getElementById('youtube-section').scrollIntoView({behavior: 'smooth'})">⬇</div>
+
+    <!-- شاشة الترحيب -->
+    <div class="welcome" id="welcome">
+        مرحبًا بك في موقع <span>TFOOR!</span>
     </div>
 
-    <div id="youtube-section" class="container">
-        <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
-        <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
+    <!-- المحتوى بعد التمرير -->
+    <div class="content">
+        <div class="container">
+            <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" 
+                 alt="Tfoor Logo" class="logo">
+            <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
+        </div>
+
         <div class="videos">
             <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
                 <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
@@ -134,20 +77,50 @@
                 <img src="https://img.youtube.com/vi/eDPzzM-avmg/0.jpg" alt="Video 3" class="video-box">
             </a>
         </div>
-    </div>
 
-    <div class="arrow" onclick="document.getElementById('shop-section').scrollIntoView({behavior: 'smooth'})">⬇ SHOP ⬇</div>
-
-    <div id="shop-section" class="shop-container">
-        <div class="shop-title">SHOP.COM</div>
-        <div class="shop-items">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895744991383/VIP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595897103814716/MVP.png" class="shop-item">
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@tfoor" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Youtube-logo-red.png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/tfoor" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/800px-Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@tfoor" target="_blank">
+                <img src="https://i.pinimg.com/736x/ba/8d/78/ba8d78194f3cae1efb764e33b758ee32.jpg" alt="TikTok">
+            </a>
+            <a href="https://discord.gg/vCqY2M7r9A" target="_blank">
+                <img src="https://cloutfluence.com/wp-content/uploads/2024/09/logo-discord.png" alt="Discord">
+            </a>
         </div>
-        <p>ملاحظة: إذا بدك تشتري رتب في ماين كرافت لازم تدخل سيرفر ديسكورد</p>
+
+        <div class="shop-container">
+            <div class="shop-title">SHOP.COM</div>
+            <div class="shop-items">
+                <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png" class="shop-item">
+                <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895744991383/VIP.png" class="shop-item">
+                <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png" class="shop-item">
+                <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595897103814716/MVP.png" class="shop-item"> 
+            </div>
+            <p style="color: #bb0000; font-size: 16px; font-weight: bold; margin-top: 10px;">
+                ملاحظة: إذا بدك تشتري رتب في ماين كرافت لازم تدخل سيرفر ديسكورد
+            </p>
+        </div>
     </div>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            document.getElementById("welcome").classList.add("hidden");
+
+            let elements = document.querySelectorAll(".container, .videos, .social-icons, .shop-container");
+            elements.forEach((el) => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
+
 
