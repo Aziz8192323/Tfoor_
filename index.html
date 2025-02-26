@@ -59,7 +59,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: 3px dashed #bb0000;
             padding: 5px;
-            background-color: white; /* خلفية بيضاء للصور */
+            background-color: white;
         }
         .social-icons a:hover {
             transform: scale(1.1);
@@ -99,6 +99,39 @@
             background-color: #880000;
             transform: scale(1.05);
         }
+        .shop-container {
+            width: 60%;
+            margin: 30px auto;
+            padding: 20px;
+            border: 3px dashed #bb0000;
+            border-radius: 15px;
+            background-color: rgba(255, 200, 200, 0.5);
+        }
+        .shop-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #bb0000;
+            margin-bottom: 15px;
+        }
+        .shop-items {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .shop-item {
+            width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px dashed #bb0000;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .shop-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -107,33 +140,16 @@
         <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
 
         <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
-        <div class="videos">
-            <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
-                <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
-            </a>
-            <a href="https://youtu.be/nXeftOw8mF8" target="_blank">
-                <img src="https://img.youtube.com/vi/nXeftOw8mF8/0.jpg" alt="Video 2" class="video-box">
-            </a>
-            <a href="https://youtu.be/eDPzzM-avmg" target="_blank">
-                <img src="https://img.youtube.com/vi/eDPzzM-avmg/0.jpg" alt="Video 3" class="video-box">
-            </a>
-        </div>
     </div>
 
-    <!-- الأيقونات تحت المربع المخطط -->
-    <div class="social-icons">
-        <a href="https://www.youtube.com/@tfoor" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Youtube-logo-red.png" alt="YouTube">
-        </a>
-        <a href="https://www.instagram.com/tfoor" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/800px-Instagram_icon.png" alt="Instagram">
-        </a>
-        <a href="https://www.tiktok.com/@tfoor" target="_blank">
-            <img src="https://i.pinimg.com/736x/ba/8d/78/ba8d78194f3cae1efb764e33b758ee32.jpg" alt="TikTok">
-        </a>
-        <a href="https://discord.gg/vCqY2M7r9A" target="_blank">
-            <img src="https://cloutfluence.com/wp-content/uploads/2024/09/logo-discord.png" alt="Discord">
-        </a>
+    <div class="shop-container">
+        <div class="shop-title">SHOP.com</div>
+        <div class="shop-items">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png" class="shop-item">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895744991383/VIP.png" class="shop-item">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png" class="shop-item">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595897103814716/MVP.png" class="shop-item">
+        </div>
     </div>
 </body>
 </html>
