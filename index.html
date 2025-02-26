@@ -6,17 +6,18 @@
     <title>Tfoor YouTube Showcase</title>
     <style>
         body {
-            background-color: #e6f7e6;
+            background-color: #800000; /* أحمر غامق */
             text-align: center;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            color: #fff; /* لون النص الأبيض لتباين أفضل */
         }
         .title {
             font-size: 32px;
             font-weight: bold;
             margin-top: 20px;
-            color: #333;
+            color: #FFD700; /* ذهبي لمظهر أنيق */
         }
         .container {
             position: relative;
@@ -43,6 +44,7 @@
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px solid #FFD700; /* إطار ذهبي */
         }
         .video-box:hover {
             transform: scale(1.1);
@@ -53,22 +55,23 @@
             padding: 10px 20px;
             font-size: 16px;
             color: white;
-            background-color: #ff0000;
+            background-color: #FFD700; /* ذهبي */
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
         .subscribe-button:hover {
-            background-color: #cc0000;
+            background-color: #cc0000; /* أحمر أغمق */
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <div class="title">TFoor.com</div>
     <div class="container">
-        <!-- صورة اللوجو من قناة YouTube -->
-        <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s48-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
+        <!-- صورة اللوجو من قناة YouTube بجودة عالية -->
+        <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
         <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
         <div class="videos" id="videoContainer">
             <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
