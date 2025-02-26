@@ -25,6 +25,9 @@
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
+            padding: 20px;
+            border: 3px dashed #bb0000; /* إطار متقطع */
+            border-radius: 10px;
         }
         .logo {
             width: 150px;
@@ -32,7 +35,6 @@
             margin-bottom: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            border: 3px dashed #bb0000; /* إطار أحمر متقطع */
             padding: 5px;
             transition: transform 0.3s ease;
         }
@@ -75,8 +77,7 @@
         .subscribe-button:hover {
             background-color: #880000;
         }
-        .container:hover .videos,
-        .logo:hover ~ .videos {
+        .container:hover .videos {
             opacity: 1;
             transform: translateY(0);
         }
