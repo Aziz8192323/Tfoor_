@@ -12,134 +12,136 @@
             margin: 0;
             padding: 0;
             color: #333;
+            overflow-x: hidden;
         }
-        .title {
-            font-size: 32px;
+
+        /* انميشن ظهور الترحيب */
+        .welcome {
+            font-size: 36px;
             font-weight: bold;
-            margin-top: 20px;
             color: #bb0000;
+            margin-top: 50vh;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
         }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* السهم النابض */
+        .arrow {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #bb0000;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(10px); opacity: 0.5; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* المربعات المخططة */
+        .container, .shop-container {
             width: 60%;
-            margin: 20px auto;
+            margin: 50px auto;
             padding: 20px;
             border: 3px dashed #bb0000;
             border-radius: 15px;
             background-color: rgba(255, 200, 200, 0.5);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
         }
+
+        /* اظهار المحتوى عند التمرير */
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* اللوقو */
         .logo {
             width: 150px;
             border-radius: 50%;
             margin-bottom: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
             border: 3px dashed #bb0000;
             padding: 5px;
             transition: transform 0.3s ease;
         }
+
         .logo:hover {
             transform: scale(1.1);
         }
+
+        /* الفيديوهات */
+        .videos {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .video-box {
+            width: 250px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px dashed #bb0000;
+            padding: 5px;
+        }
+
+        .video-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* الأيقونات */
         .social-icons {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin: 20px 0;
         }
-        .social-icons a {
-            display: inline-block;
-            transition: transform 0.3s;
-        }
+
         .social-icons img {
             width: 80px;
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: 3px dashed #bb0000;
             padding: 5px;
             background-color: white;
+            transition: transform 0.3s;
         }
-        .social-icons a:hover {
+
+        .social-icons a:hover img {
             transform: scale(1.1);
         }
-        .videos {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-        .video-box {
-            width: 250px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 3px dashed #bb0000;
-            padding: 5px;
-        }
-        .video-box:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .subscribe-button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: #bb0000;
-            border: 3px dashed #bb0000;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .subscribe-button:hover {
-            background-color: #880000;
-            transform: scale(1.05);
-        }
-        .shop-container {
-            margin-top: 20px;
-            padding: 20px;
-            border: 3px dashed #bb0000;
-            border-radius: 15px;
-            background-color: rgba(255, 200, 200, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 60%;
-            margin: auto;
-        }
-        .shop-title {
-            font-size: 28px;
-            font-weight: bold;
-            color: #bb0000;
-            margin-bottom: 15px;
-        }
-        .shop-items {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+
+        /* الشوب */
         .shop-item {
             width: 300px;
             border-radius: 10px;
             border: 3px dashed #bb0000;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .shop-item:hover {
-            transform: scale(1.5);
+            transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <div class="title">TFoor.com</div>
+
+    <!-- الترحيب -->
+    <div class="welcome">مرحباً بك في موقع TFOOR!</div>
+    <div class="arrow">⬇️</div>
+
+    <!-- قناة اليوتيوب والفيديوهات -->
     <div class="container">
         <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
-        <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
         <div class="videos">
             <a href="https://youtu.be/MmN-HRz6mBw" target="_blank">
                 <img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box">
@@ -147,37 +149,39 @@
             <a href="https://youtu.be/nXeftOw8mF8" target="_blank">
                 <img src="https://img.youtube.com/vi/nXeftOw8mF8/0.jpg" alt="Video 2" class="video-box">
             </a>
-            <a href="https://youtu.be/eDPzzM-avmg" target="_blank">
-                <img src="https://img.youtube.com/vi/eDPzzM-avmg/0.jpg" alt="Video 3" class="video-box">
-                   </div>
-    </div>
-
-    <!-- الأيقونات تحت المربع المخطط -->
-    <div class="social-icons">
-        <a href="https://www.youtube.com/@tfoor" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Youtube-logo-red.png" alt="YouTube">
-        </a>
-        <a href="https://www.instagram.com/tfoor" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/800px-Instagram_icon.png" alt="Instagram">
-        </a>
-        <a href="https://www.tiktok.com/@tfoor" target="_blank">
-            <img src="https://i.pinimg.com/736x/ba/8d/78/ba8d78194f3cae1efb764e33b758ee32.jpg" alt="TikTok">
-        </a>
-        <a href="https://discord.gg/vCqY2M7r9A" target="_blank">
-            <img src="https://cloutfluence.com/wp-content/uploads/2024/09/logo-discord.png" alt="Discord">
-            
-            </a>
         </div>
     </div>
+
+    <!-- أيقونات التواصل -->
+    <div class="social-icons">
+        <a href="https://www.youtube.com/@tfoor" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Youtube-logo-red.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/tfoor" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/800px-Instagram_icon.png" alt="Instagram"></a>
+    </div>
+
+    <!-- قسم الشوب -->
     <div class="shop-container">
         <div class="shop-title">SHOP.COM</div>
         <div class="shop-items">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png?ex=67c02cfc&is=67bedb7c&hm=352919691847d50899edfe3aa0f295286fd6ded3173115f4ef8944903d183568&=&format=webp&quality=lossless&width=1351&height=760" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895744991383/VIP.png?ex=67c02cfc&is=67bedb7c&hm=f5f8c4c4500b72c95ca1de210cfae6c4192328bd4a5a04dcd10a4e44ba32cb85&=&format=webp&quality=lossless&width=1351&height=760" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png?ex=67c02cfc&is=67bedb7c&hm=f713b09ccb8df73f365ee73aefd56b519e1a7efc44e30a2ab01d197a7fb6a2cc&=&format=webp&quality=lossless&width=1351&height=760" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595897103814716/MVP.png?ex=67c02cfd&is=67bedb7d&hm=052ec1cfe9ef9b9da57497649cc885dcfddae03a0d84639e29183b87d0d83095&=&format=webp&quality=lossless&width=1351&height=760" class="shop-item"> 
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png" class="shop-item">
+            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png" class="shop-item">
         </div>
-        <p style="color: #bb0000; font-size: 16px; font-weight: bold; margin-top: 10px;">ملاحظة: إذا بدك تشتري رتب في ماين كرافت لازم تدخل سيرفر ديسكورد</p>
     </div>
+
+    <p style="color: #bb0000; font-size: 16px; font-weight: bold; margin-top: 10px;">ملاحظة: إذا بدك تشتري رتب في ماين كرافت لازم تدخل سيرفر ديسكورد</p>
+
+    <script>
+        // إظهار المحتوى عند التمرير
+        document.addEventListener("scroll", function() {
+            let elements = document.querySelectorAll('.container, .shop-container');
+            elements.forEach(element => {
+                let position = element.getBoundingClientRect().top;
+                let screenHeight = window.innerHeight;
+                if (position < screenHeight - 50) {
+                    element.classList.add("show");
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
