@@ -6,7 +6,6 @@
     <title>Tfoor YouTube Showcase</title>
     <style>
         body {
-            background-color: white;
             text-align: center;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -24,25 +23,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 60%;
-            margin: 20px auto;
-            padding: 20px;
-            border: 3px dashed #bb0000;
-            border-radius: 15px;
-            background: url('https://i.imgur.com/8DqZaDP.jpg'); /* استبدالها بالخلفية الحمراء المناسبة */
-            background-size: cover;
-            background-position: center;
+            margin-top: 20px;
         }
         .logo {
-            width: 120px;
+            width: 150px;
             border-radius: 50%;
             margin-bottom: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            border: 3px dashed #bb0000;
+            border: 3px dashed #bb0000; /* إطار أحمر متقطع */
             padding: 5px;
             transition: transform 0.3s ease;
-            background-color: white;
         }
         .logo:hover {
             transform: scale(1.1);
@@ -50,19 +41,19 @@
         .videos {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 20px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .video-box {
-            width: 200px;
+            width: 250px;
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 3px dashed #bb0000;
+            border: 3px dashed #bb0000; /* إطار أحمر متقطع */
             padding: 5px;
         }
         .video-box:hover {
@@ -70,9 +61,9 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         .subscribe-button {
-            margin-top: 10px;
-            padding: 8px 16px;
-            font-size: 14px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
             color: white;
             background-color: #bb0000;
             border: none;
