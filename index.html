@@ -100,27 +100,34 @@
             transform: scale(1.05);
         }
         .shop-container {
-            margin-top: 30px;
-            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            border: 3px dashed #bb0000;
+            border-radius: 15px;
+            background-color: rgba(255, 200, 200, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60%;
+            margin: auto;
         }
         .shop-title {
             font-size: 28px;
             font-weight: bold;
             color: #bb0000;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         .shop-items {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 15px;
+            flex-wrap: wrap;
         }
         .shop-item {
-            width: 250px;
+            width: 200px;
             border-radius: 10px;
             border: 3px dashed #bb0000;
-            padding: 5px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .shop-item:hover {
             transform: scale(1.1);
@@ -148,12 +155,11 @@
     <div class="shop-container">
         <div class="shop-title">SHOP.COM</div>
         <div class="shop-items">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895744991383/VIP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595897103814716/MVP.png" class="shop-item">
+            <img src="image1.png" class="shop-item">
+            <img src="image2.png" class="shop-item">
+            <img src="image3.png" class="shop-item">
+            <img src="image4.png" class="shop-item">
         </div>
-        <p style="color: #bb0000; font-size: 16px; font-weight: bold; margin-top: 10px;">ملاحظة: إذا بدك تشتري رتب في ماين كرافت لازم تدخل سيرفر ديسكورد</p>
     </div>
 </body>
 </html>
