@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TFoor Website</title>
+    <title>TFoor Welcome</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
 
         body {
             background-color: #ffdddd;
@@ -18,30 +18,30 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
+
         .welcome-text {
             font-size: 40px;
             font-weight: bold;
             opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards, bounce 1.5s ease-in-out 2s infinite alternate;
+            animation: fadeIn 2s ease-in-out forwards, bounce 3s infinite ease-in-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
-    <div class="welcome-text">مرحبًا بك في موقع TFOOR</div>
+    <div class="welcome-text">مرحبًا بك في موقع تفور!</div>
 </body>
 </html>
 
-</body>
-</html>
 
