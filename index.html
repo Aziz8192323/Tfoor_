@@ -100,8 +100,8 @@
             transform: scale(1.05);
         }
         .shop-container {
+            margin: 40px auto;
             width: 60%;
-            margin: 30px auto;
             padding: 20px;
             border: 3px dashed #bb0000;
             border-radius: 15px;
@@ -119,16 +119,15 @@
             gap: 10px;
             flex-wrap: wrap;
         }
-        .shop-item {
+        .shop-item img {
             width: 200px;
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border: 3px dashed #bb0000;
             padding: 5px;
-            cursor: pointer;
         }
-        .shop-item:hover {
+        .shop-item img:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
@@ -138,18 +137,22 @@
     <div class="title">TFoor.com</div>
     <div class="container">
         <img src="https://yt3.ggpht.com/KLIm2iYrq23qul4rvKHL4B82a7i-sBdZtkLeuY3WsdRWo3ia264EtN6fHVvLx7z2TBKv2_Jj=s800-c-k-c0x00ffffff-no-rj" alt="Tfoor Logo" class="logo">
-
         <button class="subscribe-button" onclick="window.open('https://www.youtube.com/@tfoor', '_blank')">اشترك في القناة</button>
+        <div class="videos">
+            <a href="https://youtu.be/MmN-HRz6mBw" target="_blank"><img src="https://img.youtube.com/vi/MmN-HRz6mBw/0.jpg" alt="Video 1" class="video-box"></a>
+            <a href="https://youtu.be/nXeftOw8mF8" target="_blank"><img src="https://img.youtube.com/vi/nXeftOw8mF8/0.jpg" alt="Video 2" class="video-box"></a>
+            <a href="https://youtu.be/eDPzzM-avmg" target="_blank"><img src="https://img.youtube.com/vi/eDPzzM-avmg/0.jpg" alt="Video 3" class="video-box"></a>
+        </div>
     </div>
-
     <div class="shop-container">
         <div class="shop-title">SHOP.com</div>
         <div class="shop-items">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895270903909/VIP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595895744991383/VIP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595896495902822/MVP.png" class="shop-item">
-            <img src="https://media.discordapp.net/attachments/1213191939495825478/1292595897103814716/MVP.png" class="shop-item">
+            <img src="URL1" alt="VIP 1" class="shop-item">
+            <img src="URL2" alt="VIP 2" class="shop-item">
+            <img src="URL3" alt="MVP 1" class="shop-item">
+            <img src="URL4" alt="MVP 2" class="shop-item">
         </div>
     </div>
 </body>
 </html>
+
