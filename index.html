@@ -24,7 +24,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 60%; /* تصغير الحجم */
+            width: 60%;
             margin: 20px auto;
             padding: 20px;
             border: 3px dashed #bb0000;
@@ -32,12 +32,12 @@
             background-color: rgba(255, 200, 200, 0.5);
         }
         .logo {
-            width: 120px; /* تصغير الصورة */
+            width: 120px;
             border-radius: 50%;
             margin-bottom: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            border: 3px dashed #bb0000; /* إطار أحمر متقطع */
+            border: 3px dashed #bb0000;
             padding: 5px;
             transition: transform 0.3s ease;
         }
@@ -47,7 +47,7 @@
         .videos {
             display: flex;
             justify-content: center;
-            gap: 10px; /* تقليل المسافة بين العناصر */
+            gap: 10px;
             flex-wrap: wrap;
             margin-top: 10px;
             opacity: 0;
@@ -55,11 +55,11 @@
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .video-box {
-            width: 200px; /* تصغير الفيديوهات */
+            width: 200px;
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 3px dashed #bb0000; /* إطار أحمر متقطع */
+            border: 3px dashed #bb0000;
             padding: 5px;
         }
         .video-box:hover {
@@ -68,17 +68,19 @@
         }
         .subscribe-button {
             margin-top: 10px;
-            padding: 8px 16px;
-            font-size: 14px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
             color: white;
             background-color: #bb0000;
-            border: none;
-            border-radius: 5px;
+            border: 3px dashed #bb0000; /* إطار متقطع أحمر */
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .subscribe-button:hover {
             background-color: #880000;
+            transform: scale(1.05);
         }
         .container:hover .videos,
         .logo:hover ~ .videos {
